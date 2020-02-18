@@ -4,7 +4,7 @@ from State import State
 
 def readData():
 
-    states = {}
+    states = []
 
     data = json.load(open('electionData.json'))
 
@@ -29,6 +29,7 @@ def readData():
             w = avgDemVote
             l = avgRepVote
             lean = int(math.ceil((100*(w/(w+l))) - abs(100*(l/(w+l))))/2)
-            print(lean, "lean Democrat")
+        
+        states.append(State(item['name'], party, item['electoralVotes'], lean))
     
 readData()
