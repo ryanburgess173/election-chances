@@ -1,0 +1,13 @@
+{"states": [
+  { "name": "Washington",
+    "party": "D",
+    "electoralVotes": 8,
+    "lean": 4
+    },
+  { "name": "South Carolina",
+    "party": "R",
+    "electoralVotes": 9,
+    "lean": 5
+    }
+  ]
+}
