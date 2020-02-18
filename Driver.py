@@ -1,17 +1,32 @@
+import json
+import math
 from State import State
 
 def main():
 
-    dCount = 0
-    rCount = 0
-    for i in range(1,1000):
-        vote = State("Washington", 'D', 8, 4).get_electoralVote()
-        if(vote == 'D'):
-            dCount +=1
-        else:
-            rCount +=1
+    states = {}
 
-    print("R:",rCount)
-    print("D:",dCount)
+    data = json.load(open('electionData.json'))
+
+    for item in data['states']:
+        print("\n--------------------")
+        print(item['name'])
+        print("--------------------")
+        avgRepVote = (item['r2016Votes']+item['r2012Votes']+item['r2008Votes']+item['r2004Votes'])/4
+        print("Average Republican Vote:",avgRepVote)
+        avgDemVote = (item['d2016Votes']+item['d2012Votes']+item['d2008Votes']+item['d2004Votes'])/4
+        print("Average Democratic Vote:",avgDemVote)
+        if(avgRepVote > avgDemVote):
+            party = 'R'
+            w = avgRepVote
+            l = avgDemVote
+            lean = int(math.ceil((100*(w/(w+l))) - abs(100*(l/(w+l))))/2)
+            print(lean, "lean Republican")
+        elif(avgRepVote < avgDemVote):
+            party = 'D'
+            w = avgDemVote
+            l = avgRepVote
+            lean = int(math.ceil((100*(w/(w+l))) - abs(100*(l/(w+l))))/2)
+            print(lean, "lean Democrat")
 
 main()

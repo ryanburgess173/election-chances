@@ -1,13 +1,39 @@
 {"states": [
-  { "name": "Washington",
-    "party": "D",
-    "electoralVotes": 8,
-    "lean": 4
+    { 
+      "name": "Washington",
+      "electoralVotes": 8,
+      "d2016Votes": 1742718,
+      "r2016Votes": 1221747,
+      "d2012Votes": 1755396,
+      "r2012Votes": 1290670,
+      "d2008Votes": 1750848,
+      "r2008Votes": 1229216,
+      "d2004Votes": 1510201,
+      "r2004Votes": 1304894
     },
-  { "name": "South Carolina",
-    "party": "R",
-    "electoralVotes": 9,
-    "lean": 5
+    {
+      "name": "Oregon",
+      "electoralVotes": 7,
+      "d2016Votes": 1002106,
+      "r2016Votes": 782403,
+      "d2012Votes": 970488,
+      "r2012Votes": 754175,
+      "d2008Votes": 1037291,
+      "r2008Votes": 738475,
+      "d2004Votes": 943163,
+      "r2004Votes": 866831
+    },
+    {
+      "name": "Idaho",
+      "electoralVotes": 4,
+      "r2016Votes": 409055,
+      "d2016Votes": 189765,
+      "r2012Votes": 420911,
+      "d2012Votes": 212787,
+      "r2008Votes": 403012,
+      "d2008Votes": 236440,
+      "r2004Votes": 409235,
+      "d2004Votes": 181098
     }
   ]
 }
