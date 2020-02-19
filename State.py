@@ -12,11 +12,11 @@ class State:
         self.__party =  party
         self.__electoralVotes = electoralVotes
         if(self.__party == 'R'):
-            self.__rChance += lean
-            self.__dChance -= lean
+            self.__rChance += (lean*2)
+            self.__dChance -= (lean*2)
         else:
-            self.__rChance -= lean
-            self.__dChance += lean
+            self.__rChance -= (lean*2)
+            self.__dChance += (lean*2)
         self.electionDay()
 
     def electionDay(self):
@@ -50,3 +50,6 @@ class State:
 
     def get_margin(self):
         return self.__margin
+
+    def getElectoralVotes(self):
+        return self.__electoralVotes

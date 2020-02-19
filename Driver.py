@@ -27,10 +27,35 @@ def main():
 
         states.append(State(item['name'], party, item['electoralVotes'], lean))
 
+    democraticStates = 0
+    republicanStates = 0
+    democraticReps = 0
+    republicanReps = 0
+    democraticVotes = 0
+    republicanVotes = 0
     for state in states:
-        input("Next State...")
         print(state.get_stateName())
         print(state.get_electoralVote())
-        print(state.get_margin())
+        if(state.get_stateName() != "Washington D.C."):
+            if(state.get_electoralVote()=='R'):
+                republicanStates += 1
+                republicanVotes+=state.getElectoralVotes()
+                republicanReps += state.getElectoralVotes() - 2
+            else:
+                democraticStates += 1
+                democraticReps += state.getElectoralVotes() - 2
+                democraticVotes+=state.getElectoralVotes()
+        else:
+            if(state.get_electoralVote()=='R'):
+                republicanVotes += state.getElectoralVotes()
+            else:
+                democraticVotes += state.getElectoralVotes()
+
+    print("Republican Senators:",republicanStates*2)
+    print("Democrat Senators:",democraticStates*2)
+    print("Republican Representatives:",republicanReps)
+    print("Democratic Representatives:",democraticReps)
+    print("Republican Electoral Votes:",republicanVotes)
+    print("Democratic Electoral Votes:",democraticVotes)
 
 main()
