@@ -15,12 +15,12 @@ def main():
         avgDemVote = (item['d2016Votes']+item['d2012Votes'] +
                       item['d2008Votes']+item['d2004Votes'])/4
         if(avgRepVote > avgDemVote):
-            party = 'R'
+            party = 'Republican'
             w = avgRepVote
             l = avgDemVote
             lean = int(math.ceil((100*(w/(w+l))) - abs(100*(l/(w+l))))/2)
         elif(avgRepVote < avgDemVote):
-            party = 'D'
+            party = 'Democratic'
             w = avgDemVote
             l = avgRepVote
             lean = int(math.ceil((100*(w/(w+l))) - abs(100*(l/(w+l))))/2)
@@ -34,8 +34,7 @@ def main():
     democraticVotes = 0
     republicanVotes = 0
     for state in states:
-        print(state.get_stateName())
-        print(state.get_electoralVote())
+        print(state.get_stateName()+": "+state.get_party()+" lean of "+str(state.get_lean()) + "%")
         if(state.get_stateName() != "Washington D.C."):
             if(state.get_electoralVote()=='R'):
                 republicanStates += 1
@@ -51,11 +50,5 @@ def main():
             else:
                 democraticVotes += state.getElectoralVotes()
 
-    print("Republican Senators:",republicanStates*2)
-    print("Democrat Senators:",democraticStates*2)
-    print("Republican Representatives:",republicanReps)
-    print("Democratic Representatives:",democraticReps)
-    print("Republican Electoral Votes:",republicanVotes)
-    print("Democratic Electoral Votes:",democraticVotes)
 
 main()

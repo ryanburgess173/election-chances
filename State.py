@@ -11,12 +11,13 @@ class State:
         self.__name = name
         self.__party =  party
         self.__electoralVotes = electoralVotes
+        self.__lean = lean
         if(self.__party == 'R'):
-            self.__rChance += (lean*2)
-            self.__dChance -= (lean*2)
+            self.__rChance += (lean)
+            self.__dChance -= (lean)
         else:
-            self.__rChance -= (lean*2)
-            self.__dChance += (lean*2)
+            self.__rChance -= (lean)
+            self.__dChance += (lean)
         self.electionDay()
 
     def electionDay(self):
@@ -53,3 +54,9 @@ class State:
 
     def getElectoralVotes(self):
         return self.__electoralVotes
+
+    def get_party(self):
+        return self.__party
+
+    def get_lean(self):
+        return self.__lean

@@ -32,4 +32,8 @@ def readData():
         
         states.append(State(item['name'], party, item['electoralVotes'], lean))
     
+    for state in states:
+        input("Next State...")
+        print(state.get)
+    
 readData()
