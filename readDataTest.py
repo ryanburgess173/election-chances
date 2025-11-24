@@ -12,11 +12,11 @@ def readData():
         print("\n--------------------")
         print(item['name'])
         print("--------------------")
-        avgRepVote = (item['r2016Votes']+item['r2012Votes'] +
-                      item['r2008Votes']+item['r2004Votes'])/4
+        avgRepVote = (item['r2024Votes']+item['r2020Votes']+item['r2016Votes']+item['r2012Votes'] +
+                      item['r2008Votes']+item['r2004Votes'])/6
         print("Average Republican Vote:", avgRepVote)
-        avgDemVote = (item['d2016Votes']+item['d2012Votes'] +
-                      item['d2008Votes']+item['d2004Votes'])/4
+        avgDemVote = (item['d2024Votes']+item['d2020Votes']+item['d2016Votes']+item['d2012Votes'] +
+                      item['d2008Votes']+item['d2004Votes'])/6
         print("Average Democratic Vote:", avgDemVote)
         if(avgRepVote > avgDemVote):
             party = 'R'
